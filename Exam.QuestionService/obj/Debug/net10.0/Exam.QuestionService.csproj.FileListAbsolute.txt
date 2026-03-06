@@ -57,3 +57,4 @@ C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.QuestionService\obj\Debug\net10.0\E
 C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.QuestionService\obj\Debug\net10.0\ref\Exam.QuestionService.dll
 C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.QuestionService\bin\Debug\net10.0\Dapper.dll
 C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.QuestionService\bin\Debug\net10.0\Npgsql.dll
+C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.QuestionService\obj\Debug\net10.0\Exam.QuestionService.sourcelink.json

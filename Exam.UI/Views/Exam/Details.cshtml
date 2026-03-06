@@ -39,7 +39,7 @@
     <div id="examContent">
         <form id="questionsForm">
             <input type="hidden" id="examId" value="@Model.ExamId" />
-            
+
             @for (int i = 0; i < Model.Questions.Count; i++)
             {
                 <div class="card mb-3 shadow-sm question-card">
@@ -48,14 +48,25 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text fs-5">@Model.Questions[i].Content</p>
-                        <div class="form-group">
-                            <label class="form-label text-muted">Cavabınız:</label>
-                            <textarea class="form-control" rows="2" name="answer_@Model.Questions[i].Id" placeholder="Bura yazın..."></textarea>
+
+                        <div class="options-group">
+                            @foreach (var option in Model.Questions[i].Options)
+                            {
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio"
+                                           name="answer_@Model.Questions[i].Id"
+                                           id="opt_@option.Id"
+                                           value="@option.Id" required>
+                                    <label class="form-check-label" for="opt_@option.Id">
+                                        @option.OptionText
+                                    </label>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
             }
-            
+
             <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4 mb-5">
                 <button type="button" id="btnSubmit" class="btn btn-primary btn-lg px-5">İmtahanı Tamamla</button>
             </div>
@@ -72,7 +83,7 @@
         const examContent = document.getElementById("examContent");
 
         const connection = new signalR.HubConnectionBuilder()
-            .withUrl("https://localhost:7199/examHub") 
+            .withUrl("https://localhost:7199/examHub")
             .withAutomaticReconnect()
             .build();
 
@@ -98,7 +109,7 @@
         function handleExamFinish(msg) {
             statusBadge.className = "badge bg-danger p-2";
             statusBadge.innerText = "Status: Vaxt Bitdi";
-            
+
             examContent.innerHTML = `
                 <div class="alert alert-danger text-center shadow p-5 mt-4">
                     <i class="bi bi-exclamation-triangle-fill display-1"></i>
@@ -109,7 +120,7 @@
                     <a href="/" class="btn btn-outline-danger mt-3">Ana Səhifəyə Qayıt</a>
                 </div>
             `;
-            
+
             alert("DİQQƏT: " + msg);
         }
 

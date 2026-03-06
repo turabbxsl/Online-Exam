@@ -41,3 +41,4 @@ C:\Users\t.bakhishli\Desktop\OnlineExam\NotificationService\bin\Debug\net10.0\Mi
 C:\Users\t.bakhishli\Desktop\OnlineExam\NotificationService\bin\Debug\net10.0\RabbitMQ.Client.dll
 C:\Users\t.bakhishli\Desktop\OnlineExam\NotificationService\bin\Debug\net10.0\OnlineExam.Shared.dll
 C:\Users\t.bakhishli\Desktop\OnlineExam\NotificationService\bin\Debug\net10.0\OnlineExam.Shared.pdb
+C:\Users\t.bakhishli\Desktop\OnlineExam\NotificationService\obj\Debug\net10.0\NotificationService.sourcelink.json

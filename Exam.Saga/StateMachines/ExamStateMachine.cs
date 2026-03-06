@@ -38,7 +38,7 @@ namespace Exam.Saga.StateMachines
             // 3. Timer Configuration
             Schedule(() => ExamTimeout, x => x.ExpirationTokenId, s =>
             {
-                s.Delay = TimeSpan.FromSeconds(15);                       //    60 minute wait
+                s.Delay = TimeSpan.FromSeconds(60);                       //    60 seconds wait
                 s.Received = x => x.CorrelateById(m => m.Message.ExamId); //    Find me by ID when I get back.
             });
 

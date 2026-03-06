@@ -44,31 +44,59 @@ namespace Exam.API.Controllers
         [HttpGet("{examId}/questions")]
         public async Task<IActionResult> GetQuestions(Guid examId)
         {
-            var sql = @"
-SELECT s.Username, q.Id, q.Content 
-FROM public.""ExamStates"" es
-JOIN public.""students"" s ON es.""StudentId"" = s.""id""
-JOIN public.""examquestions"" eq ON es.""CorrelationId"" = eq.""examid""
-JOIN public.""questions"" q ON eq.""questionid"" = q.""id""
-WHERE es.""CorrelationId"" = @ExamId";
+            var sql = @"SELECT s.""username"", 
+                               q.""id"" as QuestionId, 
+	                           q.""content"", 
+                               qo.""Id"" as OptionId, 
+	                           qo.""OptionText""
+                        FROM public.""ExamStates"" es
+                        JOIN public.Students s ON es.""StudentId"" = s.""id""
+                        JOIN public.examquestions eq ON es.""CorrelationId"" = eq.""examid""
+                        JOIN public.Questions q ON eq.""questionid"" = q.""id""
+                        LEFT JOIN public.""QuestionOptions"" qo ON q.""id"" = qo.""QuestionId""
+                        WHERE es.""CorrelationId"" = @ExamId";
 
-            var result = await _dbConnection.QueryAsync<dynamic>(sql, new { ExamId = examId });
-            var dataList = result.ToList();
+            var questionDict = new Dictionary<int, QuestionDto>();
+            string userName = "";
 
-            if (!dataList.Any()) return NotFound();
+            var result = await _dbConnection.QueryAsync<dynamic, dynamic, QuestionDto>(
+                sql,
+                (q, qo) =>
+                {
+                    if (string.IsNullOrEmpty(userName)) userName = q.username;
 
-            var response = new ExamDetailsDto
+                    if (!questionDict.TryGetValue((int)q.questionid, out var questionDto))
+                    {
+                        questionDto = new QuestionDto
+                        {
+                            Id = (int)q.questionid,
+                            Content = (string)q.content
+                        };
+                        questionDict.Add(questionDto.Id, questionDto);
+                    }
+
+                    if (qo != null)
+                    {
+                        questionDto.Options.Add(new OptionDto
+                        {
+                            Id = (int)qo.optionid,
+                            OptionText = (string)qo.OptionText
+                        });
+                    }
+                    return questionDto;
+                },
+                    new { ExamId = examId },
+                    splitOn: "OptionId"
+                );
+
+            if (!questionDict.Any()) return NotFound();
+
+            return Ok(new ExamDetailsDto
             {
                 ExamId = examId,
-                Username = dataList.First().username?.ToString() ?? "Naməlum",
-                Questions = dataList.Select(r => new QuestionDto
-                {
-                    Id = r.id != null ? Convert.ToInt32(r.id) : 0,
-                    Content = r.content?.ToString() ?? ""
-                }).ToList()
-            };
-
-            return Ok(response);
+                Username = userName,
+                Questions = questionDict.Values.ToList()
+            });
         }
 
 
