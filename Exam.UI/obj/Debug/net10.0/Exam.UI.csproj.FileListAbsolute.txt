@@ -102,3 +102,4 @@ C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.UI\obj\Debug\net10.0\refint\Exam.UI
 C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.UI\obj\Debug\net10.0\Exam.UI.pdb
 C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.UI\obj\Debug\net10.0\Exam.UI.genruntimeconfig.cache
 C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.UI\obj\Debug\net10.0\ref\Exam.UI.dll
+C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.UI\obj\Debug\net10.0\Exam.UI.sourcelink.json

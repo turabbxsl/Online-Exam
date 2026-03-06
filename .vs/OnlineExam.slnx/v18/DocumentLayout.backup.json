@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\t.bakhishli\\Desktop\\OnlineExam\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9A9C36C4-6569-053C-7EB2-182D4555E045}|Exam.API\\Exam.API.csproj|c:\\users\\t.bakhishli\\desktop\\onlineexam\\exam.api\\controllers\\examscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A9C36C4-6569-053C-7EB2-182D4555E045}|Exam.API\\Exam.API.csproj|solutionrelative:exam.api\\controllers\\examscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{748F00B7-6673-4CC0-97D2-3397FAE2EAB7}|Exam.UI\\Exam.UI.csproj|c:\\users\\t.bakhishli\\desktop\\onlineexam\\exam.ui\\views\\exam\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{748F00B7-6673-4CC0-97D2-3397FAE2EAB7}|Exam.UI\\Exam.UI.csproj|solutionrelative:exam.ui\\views\\exam\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A9C36C4-6569-053C-7EB2-182D4555E045}|Exam.API\\Exam.API.csproj|c:\\users\\t.bakhishli\\desktop\\onlineexam\\exam.api\\controllers\\examscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A9C36C4-6569-053C-7EB2-182D4555E045}|Exam.API\\Exam.API.csproj|solutionrelative:exam.api\\controllers\\examscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{748F00B7-6673-4CC0-97D2-3397FAE2EAB7}|Exam.UI\\Exam.UI.csproj|c:\\users\\t.bakhishli\\desktop\\onlineexam\\exam.ui\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,13 +66,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ExamsController.cs",
               "DocumentMoniker": "C:\\Users\\t.bakhishli\\Desktop\\OnlineExam\\Exam.API\\Controllers\\ExamsController.cs",
               "RelativeDocumentMoniker": "Exam.API\\Controllers\\ExamsController.cs",
               "ToolTip": "C:\\Users\\t.bakhishli\\Desktop\\OnlineExam\\Exam.API\\Controllers\\ExamsController.cs",
               "RelativeToolTip": "Exam.API\\Controllers\\ExamsController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAuwDUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAuwEAAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-06T08:06:15.706Z",
               "EditorCaption": ""
@@ -87,18 +87,17 @@
               "RelativeToolTip": "Exam.UI\\Controllers\\ExamController.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAgwCkAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T07:59:15.864Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T07:59:15.864Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\t.bakhishli\\Desktop\\OnlineExam\\Exam.UI\\Views\\Exam\\Details.cshtml",
               "RelativeDocumentMoniker": "Exam.UI\\Views\\Exam\\Details.cshtml",
               "ToolTip": "C:\\Users\\t.bakhishli\\Desktop\\OnlineExam\\Exam.UI\\Views\\Exam\\Details.cshtml",
               "RelativeToolTip": "Exam.UI\\Views\\Exam\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-06T07:58:32.261Z",
               "EditorCaption": ""
@@ -113,8 +112,7 @@
               "RelativeToolTip": "Exam.UI\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T07:57:12.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T07:57:12.188Z"
             },
             {
               "$type": "Document",
@@ -126,8 +124,7 @@
               "RelativeToolTip": "Exam.UI\\Views\\Exam\\Index.cshtml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAUwCMAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-06T05:53:11.919Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T05:53:11.919Z"
             },
             {
               "$type": "Document",
@@ -139,8 +136,7 @@
               "RelativeToolTip": "Exam.Saga\\StateMachines\\ExamStateMachine.cs",
               "ViewState": "AgIAABkAAAAAAAAAAADwvyYAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T13:01:57.451Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T13:01:57.451Z"
             },
             {
               "$type": "Document",
@@ -152,8 +148,7 @@
               "RelativeToolTip": "Exam.Saga\\Program.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T11:06:59.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T11:06:59.898Z"
             }
           ]
         }

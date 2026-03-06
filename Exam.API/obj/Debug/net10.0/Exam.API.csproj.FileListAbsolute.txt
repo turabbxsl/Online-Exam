@@ -43,3 +43,4 @@ C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.API\obj\Debug\net10.0\Exam.API.genr
 C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.API\obj\Debug\net10.0\ref\Exam.API.dll
 C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.API\bin\Debug\net10.0\Dapper.dll
 C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.API\bin\Debug\net10.0\Npgsql.dll
+C:\Users\t.bakhishli\Desktop\OnlineExam\Exam.API\obj\Debug\net10.0\Exam.API.sourcelink.json

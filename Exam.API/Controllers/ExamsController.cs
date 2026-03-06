@@ -53,17 +53,18 @@ JOIN public.""questions"" q ON eq.""questionid"" = q.""id""
 WHERE es.""CorrelationId"" = @ExamId";
 
             var result = await _dbConnection.QueryAsync<dynamic>(sql, new { ExamId = examId });
+            var dataList = result.ToList();
 
-            if (!result.Any()) return NotFound();
+            if (!dataList.Any()) return NotFound();
 
             var response = new ExamDetailsDto
             {
                 ExamId = examId,
-                Username = result.First().Username,
-                Questions = result.Select(r => new QuestionDto
+                Username = dataList.First().username?.ToString() ?? "Naməlum",
+                Questions = dataList.Select(r => new QuestionDto
                 {
-                    Id = (int)r.Id,
-                    Content = (string)r.Content
+                    Id = r.id != null ? Convert.ToInt32(r.id) : 0,
+                    Content = r.content?.ToString() ?? ""
                 }).ToList()
             };
 
