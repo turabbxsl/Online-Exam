@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "qt1b7j9zS6U=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\t.bakhishli\\Desktop\\OnlineExam\\NotificationService\\NotificationService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\t.bakhishli\\.nuget\\packages\\masstransit\\9.0.1\\masstransit.9.0.1.nupkg.sha512",
+    "C:\\Users\\t.bakhishli\\.nuget\\packages\\masstransit.abstractions\\9.0.1\\masstransit.abstractions.9.0.1.nupkg.sha512",
+    "C:\\Users\\t.bakhishli\\.nuget\\packages\\masstransit.rabbitmq\\9.0.1\\masstransit.rabbitmq.9.0.1.nupkg.sha512",
+    "C:\\Users\\t.bakhishli\\.nuget\\packages\\microsoft.aspnetcore.http.connections.client\\10.0.3\\microsoft.aspnetcore.http.connections.client.10.0.3.nupkg.sha512",
+    "C:\\Users\\t.bakhishli\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.3\\microsoft.aspnetcore.openapi.10.0.3.nupkg.sha512",
+    "C:\\Users\\t.bakhishli\\.nuget\\packages\\microsoft.aspnetcore.signalr.client\\10.0.3\\microsoft.aspnetcore.signalr.client.10.0.3.nupkg.sha512",
+    "C:\\Users\\t.bakhishli\\.nuget\\packages\\microsoft.aspnetcore.signalr.client.core\\10.0.3\\microsoft.aspnetcore.signalr.client.core.10.0.3.nupkg.sha512",
+    "C:\\Users\\t.bakhishli\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\t.bakhishli\\.nuget\\packages\\rabbitmq.client\\7.2.0\\rabbitmq.client.7.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}

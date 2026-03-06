@@ -1,0 +1,240 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Exam.API/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.1.66",
+          "MassTransit": "9.0.1",
+          "MassTransit.RabbitMQ": "9.0.1",
+          "Microsoft.AspNetCore.OpenApi": "10.0.3",
+          "Npgsql": "10.0.1",
+          "OnlineExam.Shared": "1.0.0",
+          "Swashbuckle.AspNetCore": "10.1.4"
+        },
+        "runtime": {
+          "Exam.API.dll": {}
+        }
+      },
+      "Dapper/2.1.66": {
+        "runtime": {
+          "lib/net8.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.66.48463"
+          }
+        }
+      },
+      "MassTransit/9.0.1": {
+        "dependencies": {
+          "MassTransit.Abstractions": "9.0.1"
+        },
+        "runtime": {
+          "lib/net10.0/MassTransit.dll": {
+            "assemblyVersion": "9.0.1.0",
+            "fileVersion": "9.0.1.0"
+          }
+        }
+      },
+      "MassTransit.Abstractions/9.0.1": {
+        "runtime": {
+          "lib/net10.0/MassTransit.Abstractions.dll": {
+            "assemblyVersion": "9.0.1.0",
+            "fileVersion": "9.0.1.0"
+          }
+        }
+      },
+      "MassTransit.RabbitMQ/9.0.1": {
+        "dependencies": {
+          "MassTransit": "9.0.1",
+          "RabbitMQ.Client": "7.2.0"
+        },
+        "runtime": {
+          "lib/net10.0/MassTransit.RabbitMqTransport.dll": {
+            "assemblyVersion": "9.0.1.0",
+            "fileVersion": "9.0.1.0"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi/10.0.3": {
+        "dependencies": {
+          "Microsoft.OpenApi": "2.4.1"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "assemblyVersion": "10.0.3.0",
+            "fileVersion": "10.0.326.7603"
+          }
+        }
+      },
+      "Microsoft.OpenApi/2.4.1": {
+        "runtime": {
+          "lib/net8.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.0"
+          }
+        }
+      },
+      "Npgsql/10.0.1": {
+        "runtime": {
+          "lib/net10.0/Npgsql.dll": {
+            "assemblyVersion": "10.0.1.0",
+            "fileVersion": "10.0.1.0"
+          }
+        }
+      },
+      "RabbitMQ.Client/7.2.0": {
+        "runtime": {
+          "lib/net8.0/RabbitMQ.Client.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.2.0.0"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore/10.1.4": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "10.1.4",
+          "Swashbuckle.AspNetCore.SwaggerGen": "10.1.4",
+          "Swashbuckle.AspNetCore.SwaggerUI": "10.1.4"
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/10.1.4": {
+        "dependencies": {
+          "Microsoft.OpenApi": "2.4.1"
+        },
+        "runtime": {
+          "lib/net10.0/Swashbuckle.AspNetCore.Swagger.dll": {
+            "assemblyVersion": "10.1.4.0",
+            "fileVersion": "10.1.4.2255"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/10.1.4": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "10.1.4"
+        },
+        "runtime": {
+          "lib/net10.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "assemblyVersion": "10.1.4.0",
+            "fileVersion": "10.1.4.2255"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/10.1.4": {
+        "runtime": {
+          "lib/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "assemblyVersion": "10.1.4.0",
+            "fileVersion": "10.1.4.2255"
+          }
+        }
+      },
+      "OnlineExam.Shared/1.0.0": {
+        "runtime": {
+          "OnlineExam.Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Exam.API/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Dapper/2.1.66": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/q77jUgDOS+bzkmk3Vy9SiWMaetTw+NOoPAV0xPBsGVAyljd5S6P+4RUW7R3ZUGGr9lDRyPKgAMj2UAOwvqZYw==",
+      "path": "dapper/2.1.66",
+      "hashPath": "dapper.2.1.66.nupkg.sha512"
+    },
+    "MassTransit/9.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wYMV/TX9AQqG9ybG7i97Et2rjPgIYXmYr3RV5k7ogr/BvPnAF8ohcmeESoTYSgQFWDi2lurKx57uPg1MJ9R0jw==",
+      "path": "masstransit/9.0.1",
+      "hashPath": "masstransit.9.0.1.nupkg.sha512"
+    },
+    "MassTransit.Abstractions/9.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Rh3Bj/8VOdaUat2Zepbe1cfqQ+20Pqd9zoUme8w50qXISZ9p6yuxBXNNBazS16TN6Kfd4FLxuMUtjY928Rxqdw==",
+      "path": "masstransit.abstractions/9.0.1",
+      "hashPath": "masstransit.abstractions.9.0.1.nupkg.sha512"
+    },
+    "MassTransit.RabbitMQ/9.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/ZfrA97Y9vlTkaRAekJrPm/bLj20RJbZLvxrphCHg1aVKWK4v9RiMj2g4TFFYHybaOQk+L5kNxAS8bZ3WQg1Iw==",
+      "path": "masstransit.rabbitmq/9.0.1",
+      "hashPath": "masstransit.rabbitmq.9.0.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.OpenApi/10.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SAvSrKDgnY5GDjDAngOXxPhUvEKlTU/0zIq8zidqHvh/xnZBPs0Vc4LqwyvnmnafNnyUaivtRABz4K4wodXfSg==",
+      "path": "microsoft.aspnetcore.openapi/10.0.3",
+      "hashPath": "microsoft.aspnetcore.openapi.10.0.3.nupkg.sha512"
+    },
+    "Microsoft.OpenApi/2.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-u7QhXCISMQuab3flasb1hoaiERmUqyWsW7tmQODyILoQ7mJV5IRGM+2KKZYo0QUfC13evEOcHAb6TPWgqEQtrw==",
+      "path": "microsoft.openapi/2.4.1",
+      "hashPath": "microsoft.openapi.2.4.1.nupkg.sha512"
+    },
+    "Npgsql/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XyUcxEfqlFomhNTG/ZdGlec+uSOQArKz0Mzz8jYKP/Jj9GM2YabU5CVZtp0yiC4f9hRp+tRZTnHMatJeJ3rwgw==",
+      "path": "npgsql/10.0.1",
+      "hashPath": "npgsql.10.0.1.nupkg.sha512"
+    },
+    "RabbitMQ.Client/7.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PPQ7cF7lwbhqC4up6en1bTUZlz06YqQwJecOJzsguTtyhNA7oL5uNDZIx/h6ZfcyPZV4V3DYKSCxfm4RUFLcbA==",
+      "path": "rabbitmq.client/7.2.0",
+      "hashPath": "rabbitmq.client.7.2.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore/10.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3y9YcUdzND3E21NiGvhxEVw2/rdQSbSLDOxrAMP96ZCaDVeB8b30L8QeWA9cfkxfyeXt+F2t1umKE0kaPxm4FA==",
+      "path": "swashbuckle.aspnetcore/10.1.4",
+      "hashPath": "swashbuckle.aspnetcore.10.1.4.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.Swagger/10.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4ac45rVXsgustOXx6abChvIXtWjc1gUgwEpExz8pkQTTXjVTuRtfyMCN0srgxwpIAw/UoH/LYcbgqrjRcYwhfg==",
+      "path": "swashbuckle.aspnetcore.swagger/10.1.4",
+      "hashPath": "swashbuckle.aspnetcore.swagger.10.1.4.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/10.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gbh8gJ97lMw0ScCdbEhAzwlHSWKiTzYtHfS6/e7u4e4c0ms6mOccLFgRsWF0ekgpDh+AlA0yWc5X5ec+6cxCXQ==",
+      "path": "swashbuckle.aspnetcore.swaggergen/10.1.4",
+      "hashPath": "swashbuckle.aspnetcore.swaggergen.10.1.4.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/10.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A1ewmv/Xq5YkjQoSW29Kc9IoIC6pu210F1Fmzmj1EO7QJLTs6w3tOJatST6s41+Y8eUr5A1JLiXZ14U5EgN6ow==",
+      "path": "swashbuckle.aspnetcore.swaggerui/10.1.4",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.10.1.4.nupkg.sha512"
+    },
+    "OnlineExam.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

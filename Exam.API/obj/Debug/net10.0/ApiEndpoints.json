@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "Exam.API.Controllers.ExamsController",
+    "Method": "GetQuestions",
+    "RelativePath": "api/Exams/{examId}/questions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "examId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Exam.API.Controllers.ExamsController",
+    "Method": "StartExam",
+    "RelativePath": "api/Exams/start",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Exam.API.Models.StartExamRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

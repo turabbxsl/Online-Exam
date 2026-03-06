@@ -1,0 +1,27 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Exam.Saga\\Exam.Saga.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Exam.API\\Exam.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Exam.QuestionService\\Exam.QuestionService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "NotificationService\\NotificationService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Exam.UI\\Exam.UI.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

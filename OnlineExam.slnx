@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="Exam.API/Exam.API.csproj" />
+  <Project Path="Exam.QuestionService/Exam.QuestionService.csproj" />
+  <Project Path="Exam.Saga/Exam.Saga.csproj" />
+  <Project Path="Exam.UI/Exam.UI.csproj" Id="748f00b7-6673-4cc0-97d2-3397fae2eab7" />
+  <Project Path="NotificationService/NotificationService.csproj" Id="07cd4f07-2d43-4c64-98b7-a2ddaa7438f1" />
+  <Project Path="OnlineExam.Shared/OnlineExam.Shared.csproj" />
+</Solution>
