@@ -121,3 +121,129 @@ This ensures that scheduled deadlines remain intact even if the application rest
 - Persistent background scheduling with Quartz.NET
 - Real-time exam status updates using SignalR
 - High-performance database access with Dapper
+
+## Exam Lifecycle Flow
+
+### 1. Exam Initiation
+
+**Student**
+
+- Clicks the **StartExam** button.
+
+**API**
+
+- Receives the request and sends a `StartExamCommand` through MassTransit.
+
+**Saga**
+
+- Listens for the `ExamStarted` event.
+- Creates a new **Saga Instance** (exam session) in the database.
+- Sets the exam state to **InProgress**.
+
+---
+
+### 2. Deadline Scheduling
+
+**Saga**
+
+- Once the exam starts, the Saga requests Quartz.NET to schedule the exam deadline.
+
+**Quartz.NET**
+
+- Creates a **Deadline Job** in the database for the specific exam ID.
+- This job stores the exact time when the exam should expire.
+
+---
+
+### 3. Active Exam Session
+
+**Student**
+
+- Selects answers during the exam.
+- Each answer is published to RabbitMQ as a `StudentAnswerSubmitted` event.
+
+**Saga**
+
+- Consumes these events and updates the current exam session state.
+- Tracks which questions have been answered and which remain unanswered.
+
+**SignalR**
+
+- Sends real-time notifications to the student's browser such as  
+  *"Your answer has been recorded"*.
+
+---
+
+### 4. Timeout Trigger
+
+**Quartz.NET**
+
+- When the scheduled time arrives, the **Deadline Job** is triggered.
+
+**Quartz.NET**
+
+- Publishes an `ExamTimeoutEvent` to RabbitMQ.
+
+---
+
+### 5. Exam Finalization
+
+**Saga**
+
+- Consumes the `ExamTimeoutEvent`.
+- Transitions the exam state to **Finished**.
+- Calculates the final score (or triggers the appropriate scoring service).
+
+**SignalR**
+
+- Sends an `ExamFinished` notification to the student's browser.
+
+**UI**
+
+- The browser automatically redirects to the **Results Page**.
+
+---
+
+## Key Characteristics of the Workflow
+
+### Event-Sourced Nature
+
+The system does not directly update the database state through synchronous operations.  
+Instead, state transitions occur through **domain events**.
+
+This approach ensures that the entire exam lifecycle remains traceable and auditable.
+
+---
+
+### Persistent Recovery
+
+If the server crashes or restarts, the system can safely recover.
+
+Because both **Saga state** and **Quartz jobs** are persisted in PostgreSQL, the system can immediately detect expired exams and finalize them once it becomes available again.
+
+---
+
+### Decoupling
+
+Each component in the system has a clearly defined responsibility:
+
+- **API** issues commands
+- **Saga** orchestrates the workflow
+- **Quartz.NET** manages time-based triggers
+
+This separation ensures that a failure in one component does not prevent other parts of the system from operating.
+
+## Setup & Installation
+
+Follow these steps to run the project locally.
+
+---
+
+### 1. Database Setup
+
+Make sure PostgreSQL is installed and running.
+
+Create a database named **ExamSagaDb** and import the provided dump file:
+
+```bash
+psql -U your_username -d ExamSagaDb -f ExamSagaDb.sql
