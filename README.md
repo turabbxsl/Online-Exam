@@ -250,3 +250,25 @@ Run RabbitMQ as a container using Docker:
 ```bash
 docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 ```
+
+### 3. Application Configuration
+
+Update the **appsettings.json** file in your projects with your specific environment details:
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "PostgreSql": "Host=localhost;Port=5433;Database=ExamSagaDb;Username=your_postgres_user;Password=your_password"
+  },
+  "RabbitMq": {
+    "Host": "localhost"
+  }
+}
+```
