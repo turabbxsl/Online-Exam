@@ -265,10 +265,10 @@ Update the **appsettings.json** file in your projects with your specific environ
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "PostgreSql": "Host=localhost;Port=5433;Database=ExamSagaDb;Username=your_postgres_user;Password=your_password"
+    "PostgreSql": "Host=YOUR_HOST;Port=YOUR_PORT;Database=ExamSagaDb;Username=YOUR_USERNAME;Password=YOUR_PASS"
   },
   "RabbitMq": {
-    "Host": "localhost"
+    "Host": "YOUR_HOST"
   }
 }
 ```
