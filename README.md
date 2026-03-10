@@ -235,37 +235,16 @@ This separation ensures that a failure in one component does not prevent other p
 
 ## Setup & Installation
 
-Follow these steps to run the project locally.
-
----
+Follow these steps to set up the local environment:
 
 ### 1. Database Setup
-
-Make sure PostgreSQL is installed and running.
-
-Create a database named **ExamSagaDb** and import the provided dump file:
+Ensure **PostgreSQL** is installed and running on your machine. Create a new database named `ExamSagaDb` and import the provided SQL dump file:
 
 ```bash
 psql -U your_username -d ExamSagaDb -f ExamSagaDb.sql
 
 ### 2. Start RabbitMQ
-
-Run RabbitMQ using Docker:
+Run RabbitMQ as a container using Docker:
 
 ```bash
 docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
-
-```markdown
-### 3. Configure Application
-
-Update the **appsettings.json** file with your local environment configuration.
-
-```json
-{
-  "ConnectionStrings": {
-    "PostgreSql": "Host=localhost;Port=5433;Database=ExamSagaDb;Username=your_postgres_user;Password=your_password"
-  },
-  "RabbitMq": {
-    "Host": "localhost"
-  }
-}
