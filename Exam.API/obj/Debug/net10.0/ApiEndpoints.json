@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "Exam.API.Controllers.ExamsController",
+    "Method": "GetExamResult",
+    "RelativePath": "api/Exams/result/{examId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "examId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Exam.API.Controllers.ExamsController",
     "Method": "StartExam",
     "RelativePath": "api/Exams/start",
     "HttpMethod": "POST",
@@ -25,10 +41,36 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Exam.API.Models.StartExamRequest",
+        "Type": "OnlineExam.Shared.Commons.Exam.Requests.API.StartExamRequest",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Exam.API.Controllers.ExamsController",
+    "Method": "SubmitForm",
+    "RelativePath": "api/Exams/submit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "OnlineExam.Shared.Commons.Exam.Requests.API.SubmitExamRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Exam.API.Controllers.ExamsController",
+    "Method": "GetTopScores",
+    "RelativePath": "api/Exams/top-scores",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

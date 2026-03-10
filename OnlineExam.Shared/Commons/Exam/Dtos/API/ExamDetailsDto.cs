@@ -1,4 +1,4 @@
-﻿namespace OnlineExam.Shared.Commons
+﻿namespace OnlineExam.Shared.Commons.Exam.Dtos.API
 {
     public class ExamDetailsDto
     {

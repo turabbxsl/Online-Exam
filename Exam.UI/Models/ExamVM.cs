@@ -1,4 +1,4 @@
-﻿using OnlineExam.Shared.Commons;
+﻿using OnlineExam.Shared.Commons.Exam.Dtos.API;
 
 namespace Exam.UI.Models
 {

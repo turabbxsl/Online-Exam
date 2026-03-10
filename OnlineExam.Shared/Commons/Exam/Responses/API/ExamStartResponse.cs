@@ -1,4 +1,4 @@
-﻿namespace OnlineExam.Shared.Commons
+﻿namespace OnlineExam.Shared.Commons.Exam.Responses.API
 {
     public record ExamStartResponse(string Message, Guid ExamId);
 }

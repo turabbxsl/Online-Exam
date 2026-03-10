@@ -81,6 +81,7 @@
         const examId = document.getElementById("examId").value;
         const statusBadge = document.getElementById("badgeStatus");
         const examContent = document.getElementById("examContent");
+        const btnSubmit = document.getElementById("btnSubmit");
 
         const connection = new signalR.HubConnectionBuilder()
             .withUrl("https://localhost:7199/examHub")
@@ -107,23 +108,72 @@
         });
 
         function handleExamFinish(msg) {
+            if(btnSubmit) btnSubmit.disabled = true;
+
             statusBadge.className = "badge bg-danger p-2";
             statusBadge.innerText = "Status: Vaxt Bitdi";
 
             examContent.innerHTML = `
-                <div class="alert alert-danger text-center shadow p-5 mt-4">
-                    <i class="bi bi-exclamation-triangle-fill display-1"></i>
+                <div class="alert alert-info text-center shadow p-5 mt-4">
+                    <div class="spinner-border text-primary mb-3" role="status"></div>
                     <h2 class="mt-3">İmtahan Tamamlandı!</h2>
                     <p class="lead">${msg}</p>
                     <hr>
-                    <p>Cavablarınız avtomatik qeydə alındı (və ya vaxt bitdiyi üçün ləğv edildi).</p>
-                    <a href="/" class="btn btn-outline-danger mt-3">Ana Səhifəyə Qayıt</a>
+                    <p>Nəticələriniz hazırlanır, lütfən gözləyin...</p>
                 </div>
             `;
 
-            alert("DİQQƏT: " + msg);
+            setTimeout(() => {
+                window.location.href = "/Exam/Result?examId=" + examId;
+            }, 3000);
         }
 
         startSignalR();
+
+        btnSubmit.addEventListener('click', async function () {
+            const form = document.getElementById('questionsForm');
+            const answers = [];
+
+            form.querySelectorAll('input[type="radio"]:checked').forEach(input => {
+                answers.push({
+                    questionId: parseInt(input.name.replace('answer_', '')),
+                    selectedOptionId: parseInt(input.value)
+                });
+            });
+
+            const totalQuestions = document.querySelectorAll('.question-cardquestion-card').length;
+            if (answers.length < totalQuestions) {
+                if (!confirm("Bütün sualları cavablandırmamısınız. Yenə də bitirmək istəyirsiniz?")) {
+                    return;
+                }
+            }
+
+            const payload = {
+                examId: examId,
+                answers: answers
+            };
+
+            try {
+                btnSubmit.disabled = true;
+                btnSubmit.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Göndərilir...';
+
+                const response = await fetch('/Exam/Submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    window.location.href = "/Exam/Result?examId=" + payload.examId;
+                } else {
+                    alert("Xəta baş verdi. Yenidən yoxlayın.");
+                    btnSubmit.disabled = false;
+                    btnSubmit.innerText = "İmtahanı Tamamla";
+                }
+            } catch (err) {
+                console.error("Submit Error:", err);
+                btnSubmit.disabled = false;
+            }
+        });
     </script>
 }

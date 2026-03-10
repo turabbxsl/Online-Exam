@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Exam.API\Exam.API.csproj" />
     <ProjectReference Include="..\OnlineExam.Shared\OnlineExam.Shared.csproj" />
   </ItemGroup>
 

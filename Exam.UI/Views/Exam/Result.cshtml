@@ -1,0 +1,114 @@
+﻿@model Exam.UI.Models.ExamResultVM
+
+@{
+    ViewData["Title"] = "İmtahan Nəticəsi";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card shadow-lg border-0 rounded-4 overflow-hidden mb-4">
+                <div class="card-body p-5 text-center @(Model.Score >= 50 ? "bg-success-subtle" : "bg-danger-subtle")">
+                    <h5 class="text-uppercase fw-bold text-muted mb-3">İmtahan Hesabatı</h5>
+                    <div class="display-1 fw-black mb-3 @(Model.Score >= 50 ? "text-success" : "text-danger")">
+                        @Model.Score<span class="fs-2">%</span>
+                    </div>
+                    <p class="lead fw-semibold mb-4 text-dark">
+                        @(Model.Score >= 50 ? "Təbriklər, imtahanı uğurla keçdiniz!" : "Təəssüf ki, keçid balını toplaya bilmədiniz.")
+                    </p>
+
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-4">
+                            <div class="p-3 bg-white rounded-3 shadow-sm">
+                                <h4 class="mb-0 fw-bold">@Model.TotalQuestions</h4>
+                                <small class="text-muted">Sual</small>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="p-3 bg-white rounded-3 shadow-sm border-bottom border-success border-4">
+                                <h4 class="mb-0 fw-bold text-success">@Model.CorrectAnswers</h4>
+                                <small class="text-muted">Düzgün</small>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="p-3 bg-white rounded-3 shadow-sm border-bottom border-danger border-4">
+                                <h4 class="mb-0 fw-bold text-danger">@(Model.TotalQuestions - Model.CorrectAnswers)</h4>
+                                <small class="text-muted">Səhv</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="fw-bold mb-4 mt-5"><i class="bi bi-list-check me-2"></i>Sual Detalları</h4>
+            @foreach (var detail in Model.Details)
+            {
+                <div class="card mb-3 shadow-sm border-0 @(detail.IsCorrect ? "border-start border-success border-5" : "border-start border-danger border-5")">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h6 class="fw-bold mb-0 text-dark">@detail.QuestionText</h6>
+                            <span class="badge @(detail.IsCorrect ? "bg-success" : "bg-danger") rounded-pill px-3">
+                                @(detail.IsCorrect ? "Düzgün" : "Səhv")
+                            </span>
+                        </div>
+                        <hr class="text-muted opacity-25">
+                        <div class="row mt-3">
+                            <div class="col-md-6 mb-2">
+                                <small class="text-muted d-block mb-1 text-uppercase">Sizin Seçiminiz:</small>
+                                <div class="p-2 rounded-2 @(detail.IsCorrect ? "bg-success-subtle text-success" : "bg-danger-subtle text-danger") fw-semibold">
+                                    @detail.UserAnswer
+                                </div>
+                            </div>
+                            @if (!detail.IsCorrect)
+                            {
+                                <div class="col-md-6">
+                                    <small class="text-muted d-block mb-1 text-uppercase">Düzgün Cavab:</small>
+                                    <div class="p-2 rounded-2 bg-light text-dark fw-semibold border">@detail.CorrectAnswer</div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="d-flex justify-content-start gap-3 mt-4">
+                <a asp-action="Index" class="btn btn-outline-primary rounded-pill shadow-sm px-4">Ana Səhifə</a>
+                <button onclick="window.print()" class="btn btn-secondary rounded-pill shadow-sm px-4">Çap et</button>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mt-lg-0 mt-4">
+            <div class="sticky-top" style="top: 20px;">
+                @await Component.InvokeAsync("Leaderboard")
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .fw-black {
+        font-weight: 900;
+    }
+
+    .bg-success-subtle {
+        background-color: #d1e7dd !important;
+    }
+
+    .bg-danger-subtle {
+        background-color: #f8d7da !important;
+    }
+
+    .card {
+        transition: transform 0.2s;
+    }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+</style>

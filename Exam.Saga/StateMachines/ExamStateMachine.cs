@@ -38,7 +38,7 @@ namespace Exam.Saga.StateMachines
             // 3. Timer Configuration
             Schedule(() => ExamTimeout, x => x.ExpirationTokenId, s =>
             {
-                s.Delay = TimeSpan.FromSeconds(60);                       //    60 seconds wait
+                s.Delay = TimeSpan.FromMinutes(60);                       //    60 seconds wait
                 s.Received = x => x.CorrelateById(m => m.Message.ExamId); //    Find me by ID when I get back.
             });
 
@@ -68,7 +68,11 @@ namespace Exam.Saga.StateMachines
                 // Scenario A: The student submitted the answers on time
                 When(SubmitAnswers)
                 .Unschedule(ExamTimeout)
-                .Then(context => Console.WriteLine($"Tələbə {context.Saga.StudentId} cavabları təqdim etdi."))
+                .Then(context => {
+                    Console.WriteLine($"Tələbə {context.Saga.StudentId} cavabları təqdim etdi.");
+                    //context.Saga.EndTime = DateTime.UtcNow;
+                })
+                .Publish(context => new ExamFinishedEvent(context.Message.ExamId,context.Message.StudentId, "UserSubmitted"))
                 .TransitionTo(Finished)
                 .Finalize(),
 
@@ -80,8 +84,11 @@ namespace Exam.Saga.StateMachines
                 .Finalize());
 
             // SetCompletedWhenFinalized();
-        }
 
+            During(Finished,
+                Ignore(SubmitAnswers)
+            );
+        }
 
     }
 }

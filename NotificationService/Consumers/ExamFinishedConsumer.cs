@@ -18,11 +18,16 @@ namespace NotificationService.Consumers
         {
             var msg = context.Message;
 
+            string displayMessage = msg.reason == "TimeOut"
+                ? "İmtahan vaxtı bitdi! Cavablarınız avtomatik qeydə alındı."
+                : "İmtahanınız uğurla tamamlandı!";
+
             await _hubContext.Clients.Group(msg.ExamId.ToString()).SendAsync("ReceiveExamStatus", new
             {
                 Status = "Finished",
-                Message = "İmtahan vaxtı bitdi!",
-                Reason = msg.reason
+                Message = displayMessage,
+                Reason = msg.reason,
+                ExamId = msg.ExamId
             });
         }
     }

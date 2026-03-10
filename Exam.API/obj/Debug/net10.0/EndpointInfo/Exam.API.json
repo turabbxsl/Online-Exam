@@ -5,6 +5,64 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Exams/{examId}/questions": {
+      "get": {
+        "tags": [
+          "Exams"
+        ],
+        "parameters": [
+          {
+            "name": "examId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Exams/result/{examId}": {
+      "get": {
+        "tags": [
+          "Exams"
+        ],
+        "parameters": [
+          {
+            "name": "examId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Exams/top-scores": {
+      "get": {
+        "tags": [
+          "Exams"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Exams/start": {
       "post": {
         "tags": [
@@ -36,22 +94,30 @@
         }
       }
     },
-    "/api/Exams/{examId}/questions": {
-      "get": {
+    "/api/Exams/submit": {
+      "post": {
         "tags": [
           "Exams"
         ],
-        "parameters": [
-          {
-            "name": "examId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubmitExamRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubmitExamRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubmitExamRequest"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -62,11 +128,42 @@
   },
   "components": {
     "schemas": {
+      "QuestionAnswerDto": {
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "selectedOptionId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "StartExamRequest": {
         "type": "object",
         "properties": {
           "userName": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubmitExamRequest": {
+        "type": "object",
+        "properties": {
+          "examId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "answers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuestionAnswerDto"
+            },
             "nullable": true
           }
         },
