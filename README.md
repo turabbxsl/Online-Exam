@@ -243,3 +243,10 @@ Ensure **PostgreSQL** is installed and running on your machine. Create a new dat
 ```bash
 psql -U your_username -d ExamSagaDb -f ExamSagaDb.sql
 ```
+### 2. Start RabbitMQ
+
+Run RabbitMQ as a container using Docker:
+
+```bash
+docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+```
