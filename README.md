@@ -160,7 +160,7 @@ This ensures that scheduled deadlines remain intact even if the application rest
 **Student**
 
 - Selects answers during the exam.
-- Each answer is published to RabbitMQ as a `StudentAnswerSubmitted` event.
+- Each answer is published to RabbitMQ as a `SubmitAnswers` event.
 
 **Saga**
 
@@ -196,7 +196,7 @@ This ensures that scheduled deadlines remain intact even if the application rest
 
 **SignalR**
 
-- Sends an `ExamFinished` notification to the student's browser.
+- Sends an `ExamFinishedEvent` notification to the student's browser.
 
 **UI**
 
