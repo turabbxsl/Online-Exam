@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\t.bakhishli\\Desktop\\OnlineExam\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{748F00B7-6673-4CC0-97D2-3397FAE2EAB7}|Exam.UI\\Exam.UI.csproj|c:\\users\\t.bakhishli\\desktop\\onlineexam\\exam.ui\\views\\exam\\result.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{748F00B7-6673-4CC0-97D2-3397FAE2EAB7}|Exam.UI\\Exam.UI.csproj|solutionrelative:exam.ui\\views\\exam\\result.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{748F00B7-6673-4CC0-97D2-3397FAE2EAB7}|Exam.UI\\Exam.UI.csproj|c:\\users\\t.bakhishli\\desktop\\onlineexam\\exam.ui\\views\\exam\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{748F00B7-6673-4CC0-97D2-3397FAE2EAB7}|Exam.UI\\Exam.UI.csproj|solutionrelative:exam.ui\\views\\exam\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{748F00B7-6673-4CC0-97D2-3397FAE2EAB7}|Exam.UI\\Exam.UI.csproj|c:\\users\\t.bakhishli\\desktop\\onlineexam\\exam.ui\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{748F00B7-6673-4CC0-97D2-3397FAE2EAB7}|Exam.UI\\Exam.UI.csproj|solutionrelative:exam.ui\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,43 +34,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Result.cshtml",
-              "DocumentMoniker": "C:\\Users\\t.bakhishli\\Desktop\\OnlineExam\\Exam.UI\\Views\\Exam\\Result.cshtml",
-              "RelativeDocumentMoniker": "Exam.UI\\Views\\Exam\\Result.cshtml",
-              "ToolTip": "C:\\Users\\t.bakhishli\\Desktop\\OnlineExam\\Exam.UI\\Views\\Exam\\Result.cshtml",
-              "RelativeToolTip": "Exam.UI\\Views\\Exam\\Result.cshtml",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAACoAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-10T10:43:03.262Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ExamController.cs",
-              "DocumentMoniker": "C:\\Users\\t.bakhishli\\Desktop\\OnlineExam\\Exam.UI\\Controllers\\ExamController.cs",
-              "RelativeDocumentMoniker": "Exam.UI\\Controllers\\ExamController.cs",
-              "ToolTip": "C:\\Users\\t.bakhishli\\Desktop\\OnlineExam\\Exam.UI\\Controllers\\ExamController.cs",
-              "RelativeToolTip": "Exam.UI\\Controllers\\ExamController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAQwEEAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T10:42:51.392Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\t.bakhishli\\Desktop\\OnlineExam\\Exam.UI\\Views\\Exam\\Details.cshtml",
-              "RelativeDocumentMoniker": "Exam.UI\\Views\\Exam\\Details.cshtml",
-              "ToolTip": "C:\\Users\\t.bakhishli\\Desktop\\OnlineExam\\Exam.UI\\Views\\Exam\\Details.cshtml",
-              "RelativeToolTip": "Exam.UI\\Views\\Exam\\Details.cshtml",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAEwGsAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-10T10:32:51.923Z"
             }
           ]
         }
