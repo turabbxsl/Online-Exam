@@ -23,31 +23,31 @@ This architecture provides:
 ## Core Technical Stack
 
 ### Backend
-- ASP.NET Core 8.0
+- **.NET 10**
 
 ### Distributed Messaging
-- RabbitMQ – message broker for asynchronous communication
+- **RabbitMQ** message broker for asynchronous communication
 
 ### Workflow Orchestration
-- MassTransit
-- Saga State Machine for managing long-running exam workflows
+- **MassTransit**
+- **Saga State Machine** for managing long-running exam workflows
 
 ### Background Scheduling
-- Quartz.NET for persistent and fault-tolerant job scheduling
+- **Quartz.NET** for persistent and fault-tolerant job scheduling
 
 ### Data Access
-- Dapper (Micro ORM) for high-performance query execution
+- **Dapper (Micro ORM)** for high-performance query execution
 
 ### Database
-- PostgreSQL as the primary persistence layer
+- **PostgreSQL** as the primary persistence layer
 
 ### Real-Time Communication
-- SignalR for low-latency communication between server and clients
+- **SignalR** for low-latency communication between server and clients
 
 ### Frontend
-- ASP.NET Core MVC (Server Side Rendering)
-- Bootstrap 5.3
-- Vanilla JavaScript
+- **ASP.NET Core MVC** (Server Side Rendering)
+- **Bootstrap 5.3**
+- **Vanilla JavaScript**
 
 ---
 
