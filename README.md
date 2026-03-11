@@ -20,6 +20,19 @@ This architecture provides:
 
 ---
 
+## Saga Orchestration Design
+
+The system implements the **Orchestration Saga Pattern** to manage the distributed transaction lifecycle.
+
+
+Unlike a choreography approach, our **MassTransit State Machine Saga** acts as a centralized "conductor":
+
+* **Centralized Control:** A dedicated State Machine manages all transitions and business rules, acting as the single source of truth for every exam session.
+* **Stateful Workflow:** The orchestrator maintains the state (e.g., `Started`, `InProgress`, `Finished`) in a persistent PostgreSQL store.
+* **Transactional Integrity:** It ensures that if a student's time expires (via Quartz.NET), the system accurately transitions the state and prevents further answer submissions, maintaining consistency across the distributed environment.
+
+---
+
 ## Core Technical Stack
 
 ### Backend
